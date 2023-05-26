@@ -56,6 +56,7 @@ class CookieSessionInterface(BaseSessionInterface):
         response.cookies[self.cookie_name]['expires'] = self.get_cookie_expires()
         response.cookies[self.cookie_name]['max-age'] = self.expiry
         response.cookies[self.cookie_name]['httponly'] = self.httponly
+        response.cookies[self.cookie_name]['samesite'] = self.samesite
         if self.secure:
             response.cookies[self.cookie_name]['secure'] = self.secure
         if self.domain:
