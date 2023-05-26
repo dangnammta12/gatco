@@ -49,6 +49,7 @@ class BaseSessionInterface:
         self.expiry = setdefault('SESSION_COOKIE_MAX_AGE', 86400)
         self.secure = setdefault('SESSION_COOKIE_SECURE', False)
         self.session_name = setdefault('SESSION_NAME', 'session')
+        self.samesite = setdefault('SESSION_COOKIE_SAMESITE', None)
         self.__sanic_version__ = app.__sanic_version__
         
         @app.middleware('request')
